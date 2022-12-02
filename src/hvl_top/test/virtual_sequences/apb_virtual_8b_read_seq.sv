@@ -21,7 +21,6 @@ class apb_virtual_8b_read_seq extends apb_virtual_base_seq;
   //-------------------------------------------------------
   extern function new(string name ="apb_virtual_8b_read_seq");
   extern task body();
-
 endclass : apb_virtual_8b_read_seq
 
 //--------------------------------------------------------------------------------------------
