@@ -14,7 +14,7 @@ class apb_virtual_8b_read_seq extends apb_virtual_base_seq;
 
   //Variable : apb_slave_8b_seq_h
   //Instantiation of apb_slave_8b_read_seq
-  apb_slave_8b_read_seq apb_slave_8b_read_seq_h;
+  apb_slave_8b_read_seq apb_slave_8b_seq_h;
 
   //-------------------------------------------------------
   // Externally defined Tasks and Functions
@@ -41,11 +41,11 @@ endfunction : new
 task apb_virtual_8b_read_seq::body();
   super.body();
   apb_master_8b_seq_h=apb_master_8b_read_seq::type_id::create("apb_master_8b_seq_h");
-  apb_slave_8b_write_seq_h=apb_slave_8b_write_seq::type_id::create("apb_slave_8b_write_seq_h");
+  apb_slave_8b_seq_h=apb_slave_8b_read_seq::type_id::create("apb_slave_8b_seq_h");
    
   fork
     forever begin
-      apb_slave_8b_read_seq_h.start(p_sequencer.apb_slave_seqr_h);
+      apb_slave_8b_seq_h.start(p_sequencer.apb_slave_seqr_h);
     end
   join_none
 
