@@ -9,12 +9,12 @@ class apb_virtual_8b_read_seq extends apb_virtual_base_seq;
   `uvm_object_utils(apb_virtual_8b_read_seq)
 
   //Variable : apb_master_8b_seq_h
-  //Instatiation of apb_master_8b_seq
+  //Instatiation of apb_master_8b_read_seq
   apb_master_8b_read_seq apb_master_8b_seq_h;
 
-  //Variable : apb_slave_8b_write_seq_h
-  //Instantiation of apb_master_8b_seq
-  apb_slave_8b_write_seq apb_slave_8b_write_seq_h;
+  //Variable : apb_slave_8b_seq_h
+  //Instantiation of apb_slave_8b_read_seq
+  apb_slave_8b_read_seq apb_slave_8b_read_seq_h;
 
   //-------------------------------------------------------
   // Externally defined Tasks and Functions
@@ -45,7 +45,7 @@ task apb_virtual_8b_read_seq::body();
    
   fork
     forever begin
-      apb_slave_8b_write_seq_h.start(p_sequencer.apb_slave_seqr_h);
+      apb_slave_8b_read_seq_h.start(p_sequencer.apb_slave_seqr_h);
     end
   join_none
 
